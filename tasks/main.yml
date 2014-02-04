@@ -1,7 +1,7 @@
 ---
 - name: Install the required packages
   apt: name={{ item }} state=present update_cache=yes
-  with_items: composer_apt_packages
+  with_items: apt_packages
   when: ansible_os_family == "Debian"
   tags: [packages,composer]
 

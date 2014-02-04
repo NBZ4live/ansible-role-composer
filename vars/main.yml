@@ -1,2 +1,3 @@
 ---
-# vars file for composer
+apt_packages:
+ - php5-cli

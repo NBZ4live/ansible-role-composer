@@ -1,7 +1,4 @@
 ---
-composer_apt_packages:
- - php5-cli
- - curl
 
 composer_download_url: https://getcomposer.org/composer.phar
 
