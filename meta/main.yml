@@ -1,0 +1,13 @@
+---
+galaxy_info:
+  author: Sergey Fayngold
+  license: BSD
+  min_ansible_version: 1.2
+  platforms:
+  - name: GenericUNIX
+    versions:
+    - any
+  categories:
+  - packaging
+  - system
+dependencies: []
