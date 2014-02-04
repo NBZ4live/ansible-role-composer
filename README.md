@@ -1,4 +1,6 @@
-Role Name
+[![Build Status](https://travis-ci.org/NBZ4live/ansible-role-composer.png?branch=master)](https://travis-ci.org/NBZ4live/ansible-role-composer)
+
+Composer
 ========
 
 This role installs Composer from https://getcomposer.org
