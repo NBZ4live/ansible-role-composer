@@ -1,2 +1,16 @@
 ---
-# tasks file for composer
+- name: Install the required packages
+  apt: name={{ item }} state=present update_cache=yes
+  with_items: composer_apt_packages
+  when: ansible_os_family == "Debian"
+  tags: [packages,composer]
+
+- name: Download composer
+  get_url: url={{ composer_download_url }} dest=/usr/local/bin/composer force={{ composer_download_force }} mode=755
+  tags: [packages,composer]
+
+- name: Check the installation
+  command: composer -V --no-ansi
+  register: composer_result
+  changed_when: "'Composer version' in composer_result.stdout"
+  failed_when: "'Composer version' not in composer_result.stdout"
