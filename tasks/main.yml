@@ -20,5 +20,4 @@
 - name: Check the installation
   command: composer -V --no-ansi
   register: composer_result
-  changed_when: "'Composer version' in composer_result.stdout"
   failed_when: "'Composer version' not in composer_result.stdout"
