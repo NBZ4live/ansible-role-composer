@@ -1,12 +1,20 @@
 ---
 - name: Install the required packages
-  apt: name={{ item }} state=present update_cache=yes
+  apt: >
+    name={{ item }}
+    state=present
+    update_cache=yes
+    cache_valid_time={{ apt_cache_valid_time }}
   with_items: apt_packages
   when: ansible_os_family == "Debian"
   tags: [packages,composer]
 
 - name: Download composer
-  get_url: url={{ composer_download_url }} dest=/usr/local/bin/composer force={{ composer_download_force }} mode=755
+  get_url: >
+    url={{ composer_download_url }}
+    dest=/usr/local/bin/composer
+    force={{ composer_download_force }}
+    mode=755
   tags: [packages,composer]
 
 - name: Check the installation
